@@ -3,7 +3,7 @@ import json
 import logging
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import CommandStart, Command
-from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 import config
 
@@ -32,67 +32,32 @@ def get_keyboard(step_data):
             builder.row(*row_buttons)
     return builder.as_markup()
 
-# Функция создания постоянного Главного Меню (Reply-кнопки внизу экрана)
-def get_main_menu():
-    builder = ReplyKeyboardBuilder()
-    builder.row(types.KeyboardButton(text="🚀 Start Learning"))
-    builder.row(types.KeyboardButton(text="📊 Daily Analytics"), types.KeyboardButton(text="🛠 Support"))
-    builder.row(types.KeyboardButton(text="❓ Help"))
-    return builder.as_markup(resize_keyboard=True)
-
-# Команда /start — убираем pre_start, включаем главное меню и сразу присылаем первый пост
+# Команда /start — показывает самый первый Pre-Start пост
 @dp.message(CommandStart())
 async def cmd_start(message: types.Message):
     content = load_content()
-    step_data = content["post_1"] # Начинаем сразу с post_1
-    
-    # 1. Отправляем приветствие и активируем постоянное нижнее меню
-    await message.answer(
-        text="Welcome to the Tick Tape educational bot!",
-        reply_markup=get_main_menu()
-    )
-    # 2. Отдельным сообщением присылаем текст первого поста с его инлайн-кнопками
+    step_data = content["pre_start"]
     await message.answer(
         text=step_data["text"],
         reply_markup=get_keyboard(step_data),
         disable_web_page_preview=True
     )
 
-# --- ОБРАБОТКА НАЖАТИЙ КНОПОК НИЖНЕГО ГЛАВНОГО МЕНЮ ---
-
-@dp.message(F.text == "🚀 Start Learning")
-async def menu_start_learning(message: types.Message):
-    content = load_content()
-    step_data = content["post_1"]
-    await message.answer(
-        text=step_data["text"],
-        reply_markup=get_keyboard(step_data),
-        disable_web_page_preview=True
-    )
-
-@dp.message(F.text == "📊 Daily Analytics")
-async def menu_analytics(message: types.Message):
-    # Так как обычная репли-кнопка не может содержать прямую ссылку, выдаем её сообщением
-    await message.answer(
-        text="📊 Access our daily analytics channel here:\n👉 https://t.me/your_channel_link",
-        disable_web_page_preview=True
-    )
-
-@dp.message(F.text == "❓ Help")
-async def menu_help(message: types.Message):
+# Команда /help из левого меню команд
+@dp.message(Command("help"))
+async def cmd_help(message: types.Message):
     content = load_content()
     step_data = content["sys_help"]
     await message.answer(text=step_data["text"], reply_markup=get_keyboard(step_data))
 
-@dp.message(F.text == "🛠 Support")
-async def menu_support(message: types.Message):
+# Команда /support из левого меню команд
+@dp.message(Command("support"))
+async def cmd_support(message: types.Message):
     content = load_content()
     step_data = content["sys_support"]
     await message.answer(text=step_data["text"], reply_markup=get_keyboard(step_data))
 
-# --- ОБРАБОТКА ИНЛАЙН-КНОПОК (ПЕРЕХОДЫ С ДОБАВЛЕНИЕМ В ЛЕНТУ) ---
-
-# Хэндлер переходов по шагам обучения
+# Хэндлер переходов по шагам обучения (новые посты добавляются в ленту)
 @dp.callback_query(F.data.startswith("step:"))
 async def handle_steps(callback: types.CallbackQuery):
     step_name = callback.data.split(":")[1]
@@ -100,7 +65,7 @@ async def handle_steps(callback: types.CallbackQuery):
     
     if step_name in content:
         step_data = content[step_name]
-        # Используем .answer() вместо .edit_text(), чтобы новые посты ложились в ленту ниже
+        # Используем .answer(), чтобы сообщения добавлялись в ленту, а не перезаписывались
         await callback.message.answer(
             text=step_data["text"],
             reply_markup=get_keyboard(step_data),
@@ -117,7 +82,6 @@ async def handle_sys_steps(callback: types.CallbackQuery):
     
     if key in content:
         step_data = content[key]
-        # Используем .answer() вместо .edit_text()
         await callback.message.answer(
             text=step_data["text"],
             reply_markup=get_keyboard(step_data)
@@ -125,6 +89,22 @@ async def handle_sys_steps(callback: types.CallbackQuery):
     await callback.answer()
 
 async def main():
+    # Настройка нативного меню команд Telegram (как на Скриншоте 1)
+    commands = [
+        types.BotCommand(command="start", description="Запустить бота"),
+        types.BotCommand(command="help", description="Помощь / Описание"),
+        types.BotCommand(command="support", description="Связаться с поддержкой")
+    ]
+    await bot.set_my_commands(commands)
+
+    # Автоматическая настройка текста до старта (как на Скриншоте 3)
+    try:
+        content = load_content()
+        description_text = content["pre_start"]["text"]
+        await bot.set_my_description(description=description_text)
+    except Exception as e:
+        logging.error(f"Не удалось установить описание бота: {e}")
+
     print("Робот Tick Tape запущен и готов к размотке графиков...")
     await dp.start_polling(bot)
 
