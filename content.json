@@ -42,7 +42,7 @@
     "back_step": "post_4",
     "buttons": [
       [{"text": "💡 Simple Learning Method", "callback_data": "step:post_6"}],
-      [{"text": "⬅️ Back", "callback_data": "step:post_4"}]
+      [{"text": "⬅️ Back", "callback_data": "post_4"}]
     ]
   },
   "post_6": {
@@ -72,14 +72,14 @@
   "sys_help": {
     "text": "This bot will help you confidently begin navigating the world of numbers and charts.\n\nIt contains short, clear educational materials that will help you understand the basic logic of the market: trend movements, price reaction to levels, and chart structure.\n\nYou can study the materials at your own pace, returning to relevant sections.",
     "buttons": [
-      [{"text": "⬅️ Back to Menu", "callback_data": "step:post_1"}]
+      [{"text": "⬅️ Back to Menu", "callback_data": "step:pre_start"}]
     ]
   },
   "sys_support": {
     "text": "If you have technical problems using the bot or would like to contact the author of the materials, click the contact button below.",
     "buttons": [
-      [{"text": "👨‍💻 Contact Support", "url": "https://t.me/your_tech_support_username"}],
-      [{"text": "⬅️ Back to Menu", "callback_data": "step:post_1"}]
+      [{"text": "👨‍💻 Contact Support", "url": "https://t.me/prizma_sergey"}],
+      [{"text": "⬅️ Back to Menu", "callback_data": "step:pre_start"}]
     ]
   }
 }
