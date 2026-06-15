@@ -9,7 +9,7 @@
     "text": "We're glad you're with us!\n\nYou can begin understanding financial information calmly and gradually, even if you've never opened a chart before.\n\nWe've compiled short, clear materials that help beginners understand the basic logic of the market: what trend movement is, how prices react to levels, and why charts are never chaotic without a reason. This approach develops attentiveness and strengthens confidence in decision-making.\n\nThere are no complex terms or jargon (at first), only simple explanations that will gradually build your foundation of knowledge.\n\nYou can study the materials at your own pace, returning to sections and moving forward as you gain understanding.",
     "buttons": [
       [{"text": "📈 What is price analysis?", "callback_data": "step:post_2"}],
-      [{"text": "📊 Daily analytics", "url": "https://t.me/your_channel_link"}],
+      [{"text": "📊 Daily analytics", "url": "https://t.me/crypt0_hubb"}],
       [{"text": "❓ Help", "callback_data": "sys:help"}, {"text": "🛠 Support", "callback_data": "sys:support"}]
     ]
   },
@@ -65,7 +65,7 @@
     "text": "To delve deeper into the topic, you can explore additional examples, detailed charts, and practical recommendations. We regularly publish such materials in our author's channel so you can progress at your own pace.\n\nExpanded materials help you see more nuances: how the price behaves at different moments, which levels are strong and which are temporary. This makes the learning process lively and visual.\n\nYou can continue your journey gradually, studying one module after another. This format is suitable for beginners and those who want to develop financial literacy carefully, without being overwhelmed.\n\nAll materials are purely educational. They are designed to develop an understanding of charts and price behavior, not for making trading decisions.",
     "back_step": "post_7",
     "buttons": [
-      [{"text": "📊 Daily Analytics", "url": "https://t.me/your_channel_link"}],
+      [{"text": "📊 Daily Analytics", "url": "https://t.me/crypt0_hubb"}],
       [{"text": "⬅️ Back", "callback_data": "step:post_7"}]
     ]
   },
