@@ -1,0 +1,85 @@
+{
+  "pre_start": {
+    "text": "Welcome 👋\n\nHere you'll find educational materials with specific examples to help you confidently begin understanding the world of numbers and graphs, as well as examples to reinforce them.\n\nAll content is provided for educational purposes only.\n\nTo start learning, click the button below.",
+    "buttons": [
+      [{"text": "🚀 Start Learning", "callback_data": "step:post_1"}]
+    ]
+  },
+  "post_1": {
+    "text": "We're glad you're with us!\n\nYou can begin understanding financial information calmly and gradually, even if you've never opened a chart before.\n\nWe've compiled short, clear materials that help beginners understand the basic logic of the market: what trend movement is, how prices react to levels, and why charts are never chaotic without a reason. This approach develops attentiveness and strengthens confidence in decision-making.\n\nThere are no complex terms or jargon (at first), only simple explanations that will gradually build your foundation of knowledge.\n\nYou can study the materials at your own pace, returning to sections and moving forward as you gain understanding.",
+    "buttons": [
+      [{"text": "📈 What is price analysis?", "callback_data": "step:post_2"}],
+      [{"text": "📊 Daily analytics", "url": "https://t.me/your_channel_link"}],
+      [{"text": "❓ Help", "callback_data": "sys:help"}, {"text": "🛠 Support", "callback_data": "sys:support"}]
+    ]
+  },
+  "post_2": {
+    "text": "Post 2 — What is price analysis?\n\nPrice analysis is the ability to observe how asset prices change over time and understand the factors that can influence chart movements. It's not trading or making 'higher or lower' decisions; it's learning about market logic and how prices react to events, levels, and overall dynamics.\n\nThe main value of analysis is that it makes price behavior more predictable at the pattern level. You begin to see that movements aren't random: similar structures, reaction zones, and moments of acceleration and deceleration repeat on charts.\n\nFor beginners, this approach helps eliminate the feeling of 'chaos' and see the market structure as consistent. When you understand the principles of chart formation, it's easier to make informed decisions in any financial situation—both in life and at work.\n\nThat's why learning price analysis is a gentle and safe start for anyone who wants to improve their financial literacy and learn to navigate the processes around them.\n\nExample:\nYou open a chart and see that the price moves upward for several hours, but each time it stops at roughly the same point and then retreats slightly. Even without experience, it's clear: there's a 'zone' here to which the price reacts. It's precisely these recurring patterns that analysis helps spot.",
+    "back_step": "post_1",
+    "buttons": [
+      [{"text": "📚 Analysis Basics", "callback_data": "step:post_3"}],
+      [{"text": "⬅️ Back", "callback_data": "step:post_1"}]
+    ]
+  },
+  "post_3": {
+    "text": "Post 3 — Basics of Analysis\n\nThe foundation of analysis is the ability to read price direction: where the market is currently heading and what's happening within the movement. The first thing a beginner learns is to distinguish between upward movements, downward movements, and sideways ranges. This creates a basic foundation.\n\nThe next step is understanding levels. These are zones where the price has previously reversed or stalled. These points become natural reference points and help identify where the market might stall or accelerate. Even without complex tools, such observations provide structural insight.\n\nStrong movements also have their own logic. The market rarely changes direction abruptly 'out of nowhere,' and analysis helps you notice this. You begin to understand why certain sections of the chart cause acceleration and what makes the market more dangerous or calmer.\n\nAnalytical skill develops gradually: the more you observe, the better you become at understanding the dynamics. And it is this process that makes learning convenient and safe.\n\nExample:\nIf a chart moves downward, but stops near the same level each time it falls, this is a support level. When a beginner first notices such a pattern, the market becomes more understandable. This is the first step towards a systematic perception of graphs.",
+    "back_step": "post_2",
+    "buttons": [
+      [{"text": "🛠 How to analyze a chart", "callback_data": "step:post_4"}],
+      [{"text": "⬅️ Back", "callback_data": "step:post_2"}]
+    ]
+  },
+  "post_4": {
+    "text": "Post 4 — How to analyze a situation on a chart\n\nBefore making a forecast, it's important to carefully assess the current situation. Determine the general direction: uptrend, downtrend, or sideways movement—this creates context. If the movement is clear, analysis is easier; if the market is moving sideways, forecasts require more precision.\n\nAfter that, find levels where the price has clearly reacted previously. They indicate where market participants made their decisions. These levels form benchmarks worth paying attention to during further monitoring.\n\nWatch for sharp price movements. During periods of strong volatility, the market can behave unpredictably, making any conclusions less reliable. Calm periods of the chart, on the other hand, allow for more balanced assessments.\n\nA systematic approach helps avoid jumping into chaos, but analyzes step by step. This disciplines you and makes learning akin to learning a new logic—without rushing and without unnecessary risks.\n\nExample:\nLet's say you see a sideways movement: the price rises, falls, but remains in the same range. At such moments, many people make hasty predictions. But a competent analysis suggests that it is better to wait until the price leaves the range and shows a clearer direction.",
+    "back_step": "post_3",
+    "buttons": [
+      [{"text": "🛡️ Risk Management", "callback_data": "step:post_5"}],
+      [{"text": "⬅️ Back", "callback_data": "step:post_3"}]
+    ]
+  },
+  "post_5": {
+    "text": "Post 5 — Risk management\n\nRisk management is a fundamental rule that will guide you safely throughout your learning process. It helps you maintain a calm mind and avoid emotional decisions. Even if you're only studying theory, these principles are useful in real life.\n\nFirst, set a fixed timeframe. Determine in advance how much time and attention you're willing to devote to analysis. This eliminates impulsive actions and helps build discipline. Discipline is one of the key skills of financial literacy.\n\nSecond, practice moderation. Don't try to take everything in at once. Beginners often delve too deeply into charts, forgetting about gradualism. Risk management teaches you to proceed step by step to avoid overloading yourself with unnecessary information.\n\nThird, understand that mistakes are inevitable. Any learning involves inaccuracies and incorrect assumptions. A risk-based approach allows you to take this calmly and benefit from observations rather than stress.\n\nExample:\nA beginner might stare at a chart for 2-3 hours straight and become tired, losing concentration. Risk management advises: limit your analysis time, say 20–30 minutes. This reduces emotional stress and maintains clarity of thought—a simple but highly effective principle.",
+    "back_step": "post_4",
+    "buttons": [
+      [{"text": "💡 Simple Learning Method", "callback_data": "step:post_6"}],
+      [{"text": "⬅️ Back", "callback_data": "step:post_4"}]
+    ]
+  },
+  "post_6": {
+    "text": "Post 6 — A simple teaching method\n\nOne of the most effective methods for beginners is to study levels where the price has repeatedly changed direction. These points are called reaction zones. They show where market participants were most active.\n\nWhen you see how the price approached a level in the past and what happened next, you begin to understand the pattern. The chart stops being chaotic and becomes more structured and understandable.\n\nThe levels method is useful for its simplicity. It doesn't require complex tools and is ideal for those taking their first steps. You learn only the basic mechanics of price behavior and then build on this foundation.\n\nThis approach teaches caution, observation, and gradualism—three qualities essential for financial literacy and market understanding.\n\nExample:\nYou notice that the price has bounced off the 1.2500 level three times. The fourth time, when it approaches this level again, you understand that the market often reacts here. This is not a signal for action—it is confirmation that the levels truly serve as reference points.",
+    "back_step": "post_5",
+    "buttons": [
+      [{"text": "📋 Checklist", "callback_data": "step:post_7"}],
+      [{"text": "⬅️ Back", "callback_data": "step:post_5"}]
+    ]
+  },
+  "post_7": {
+    "text": "Post 7 — Checklist\n\nBefore starting your analysis, it's helpful to go through a short checklist. It helps you focus and remove unnecessary emotions. A clear structure brings calm and makes the process more predictable.\n\nIs the general direction clear?\nIf so, you're analyzing consciously. If not, it's better to wait and see how the price moves.\n\nAre there visible levels?\nLevels are signals of a possible price reaction. They simplify the analysis.\n\nAre there any sharp fluctuations?\nVolatility can obscure the true movement. Calm sections of the chart are safer to analyze.\n\nAre you following your rules?\nA personal plan is the main tool of discipline.\n\nRecord your observations: even brief notes help you see your progress and recurring patterns.\n\nExample:\nYou open a chart and see sharp candlesticks moving in different directions. According to the checklist, this is an immediate 'no': the direction is unclear, the levels are blurred, and the fluctuations are too strong. You simply close the chart and wait—and thus maintain discipline. This is the correct use of a checklist.",
+    "back_step": "post_6",
+    "buttons": [
+      [{"text": "🔥 Continue learning", "callback_data": "step:post_8"}],
+      [{"text": "⬅️ Back", "callback_data": "step:post_6"}]
+    ]
+  },
+  "post_8": {
+    "text": "Post 8 — Continue learning\n\nTo delve deeper into the topic, you can explore additional examples, detailed charts, and practical recommendations. We regularly publish such materials in our author's channel so you can progress at your own pace.\n\nExpanded materials help you see more nuances: how the price behaves at different moments, which levels are strong and which are temporary. This makes the learning process lively and visual.\n\nYou can continue your journey gradually, studying one module after another. This format is suitable for beginners and those who want to develop financial literacy carefully, without being overwhelmed.\n\nAll materials are purely educational. They are designed to develop an understanding of charts and price behavior, not for making trading decisions.",
+    "back_step": "post_7",
+    "buttons": [
+      [{"text": "📊 Daily Analytics", "url": "https://t.me/your_channel_link"}],
+      [{"text": "⬅️ Back", "callback_data": "step:post_7"}]
+    ]
+  },
+  "sys_help": {
+    "text": "This bot will help you confidently begin navigating the world of numbers and charts.\n\nIt contains short, clear educational materials that will help you understand the basic logic of the market: trend movements, price reaction to levels, and chart structure.\n\nYou can study the materials at your own pace, returning to relevant sections.",
+    "buttons": [
+      [{"text": "⬅️ Back to Menu", "callback_data": "step:post_1"}]
+    ]
+  },
+  "sys_support": {
+    "text": "If you have technical problems using the bot or would like to contact the author of the materials, click the contact button below.",
+    "buttons": [
+      [{"text": "👨‍💻 Contact Support", "url": "https://t.me/your_tech_support_username"}],
+      [{"text": "⬅️ Back to Menu", "callback_data": "step:post_1"}]
+    ]
+  }
+}
