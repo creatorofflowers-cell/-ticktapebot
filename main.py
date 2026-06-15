@@ -18,7 +18,7 @@ def load_content():
     with open("content.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
-# Функция генерации инлайн-клавиатуры под сообщениями на основе данных из JSON
+# Функция генерации инлайн-клавиатуры на основе данных из JSON
 def get_keyboard(step_data):
     builder = InlineKeyboardBuilder()
     if "buttons" in step_data:
@@ -32,25 +32,33 @@ def get_keyboard(step_data):
             builder.row(*row_buttons)
     return builder.as_markup()
 
-# Команда /start — показывает самый первый Pre-Start пост
+# Команда /start — убираем дублирование, сразу отправляем пост 1
 @dp.message(CommandStart())
 async def cmd_start(message: types.Message):
     content = load_content()
-    step_data = content["pre_start"]
+    step_data = content["post_1"] # Сразу переходим к первому посту лекции
     await message.answer(
         text=step_data["text"],
         reply_markup=get_keyboard(step_data),
         disable_web_page_preview=True
     )
 
-# Команда /help из левого меню команд
+# Команда /analytics — выдает ссылку на канал
+@dp.message(Command("analytics"))
+async def cmd_analytics(message: types.Message):
+    await message.answer(
+        text="📊 Access our daily analytics channel here:\n👉 https://t.me/your_channel_link",
+        disable_web_page_preview=True
+    )
+
+# Команда /help из меню команд
 @dp.message(Command("help"))
 async def cmd_help(message: types.Message):
     content = load_content()
     step_data = content["sys_help"]
     await message.answer(text=step_data["text"], reply_markup=get_keyboard(step_data))
 
-# Команда /support из левого меню команд
+# Команда /support из меню команд
 @dp.message(Command("support"))
 async def cmd_support(message: types.Message):
     content = load_content()
@@ -65,7 +73,6 @@ async def handle_steps(callback: types.CallbackQuery):
     
     if step_name in content:
         step_data = content[step_name]
-        # Используем .answer(), чтобы сообщения добавлялись в ленту, а не перезаписывались
         await callback.message.answer(
             text=step_data["text"],
             reply_markup=get_keyboard(step_data),
@@ -89,15 +96,16 @@ async def handle_sys_steps(callback: types.CallbackQuery):
     await callback.answer()
 
 async def main():
-    # Настройка нативного меню команд Telegram (как на Скриншоте 1)
+    # Настройка нативного меню команд на английском языке
     commands = [
-        types.BotCommand(command="start", description="Запустить бота"),
-        types.BotCommand(command="help", description="Помощь / Описание"),
-        types.BotCommand(command="support", description="Связаться с поддержкой")
+        types.BotCommand(command="start", description="Start learning process"),
+        types.BotCommand(command="analytics", description="Daily analytics channel"),
+        types.BotCommand(command="help", description="Help & Information"),
+        types.BotCommand(command="support", description="Contact support")
     ]
     await bot.set_my_commands(commands)
 
-    # Автоматическая настройка текста до старта (как на Скриншоте 3)
+    # Автоматическая настройка текста описания до старта бота
     try:
         content = load_content()
         description_text = content["pre_start"]["text"]
