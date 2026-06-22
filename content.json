@@ -81,5 +81,12 @@
       [{"text": "👨‍💻 Contact Support", "url": "https://t.me/prizma_sergey"}],
       [{"text": "⬅️ Back to Course", "callback_data": "step:post_1"}]
     ]
+  },
+  "sys_analytics": {
+    "text": "We regularly publish additional examples, detailed charts, and real-time market insights in our author's channel. \n\nJoin our community to follow daily analytics and study market logic at your own pace.",
+    "buttons": [
+      [{"text": "📊 Daily Analytics", "url": "https://t.me/crypt0_hubb"}],
+      [{"text": "⬅️ Back to Course", "callback_data": "step:post_1"}]
+    ]
   }
 }
